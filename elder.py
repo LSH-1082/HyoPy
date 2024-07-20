@@ -16,6 +16,7 @@ def loginCmd():
     try:
         if yearComboBox.get() not in yearValue or monthComboBox.get() not in monthValue:
             msgbox.showerror("오류", "년도 혹은 월이 잘못되었습니다")
+
         else:
             driver = webdriver.Chrome(options = option)
             driver.get("https://www.carefor.co.kr/login.php")
@@ -53,13 +54,20 @@ def loginCmd():
         cnt = 0
         for i in nameList:
             try:
-                os.makedirs(current_path + "/수급자/" + i + "/" + yearComboBox.get() + "/" + monthComboBox.get())
+                os.makedirs(current_path + "/수급자/" + yearComboBox.get() + "/" + i + "/" + monthComboBox.get())
             except FileExistsError:
                 cnt +=1
-        
+        for i in nameList:
+            try:
+                os.makedirs(current_path + "/수급자/" + yearComboBox.get() + "/" + i + "/연간서류")
+                os.makedirs(current_path + "/수급자/" + yearComboBox.get() + "/" + i + "/분기서류")
+            except FileExistsError:
+                pass
+
         if(totalNum == cnt):
             msgbox.showerror("INFO", "모든 폴더가 존재합니다!")
             driver.quit()
+
         if(totalNum != cnt):
             msgbox.showinfo("INFO", str(int(totalNum)-int(cnt)) + "명에 대한 폴더를 생성하였습니다")
             driver.quit()
