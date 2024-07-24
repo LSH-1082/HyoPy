@@ -11,6 +11,9 @@ import tkinter.ttk as ttk
 import time
 import os
 
+option = Options()
+option.add_experimental_option('detach', True)
+option.add_argument("headless"), True     #브라우저 표시 옵션
 
 def loginCmd():
     try:
@@ -76,10 +79,6 @@ def selectDirectory():
     directory_path = filedialog.askdirectory()
     directoryPath.insert(0, directory_path)
 
-option = Options()
-option.add_experimental_option('detach', True)
-option.add_argument("headless"), True     #브라우저 표시 옵션
-
 root = Tk()
 root.title("효드림노인복지센터")
 root.geometry("+700+400")
@@ -109,12 +108,14 @@ monthComboBox.set("월 선택")
 
 directoryFrame = Frame(root)
 directoryLabel = Label(directoryFrame, text="폴더 선택")
-directoryLabel.pack(side="left")
 directoryPath = Entry(directoryFrame, width=30)
-directoryPath.pack(side="left")
 directoryButton = Button(directoryFrame, width=1, height=1, text="...", command=selectDirectory)
-directoryButton.pack(side="right")
 
+
+
+directoryButton.pack(side="right")
+directoryPath.pack(side="left")
+directoryLabel.pack(side="left")
 centNum.pack(side="right")
 numLabel.pack(side="left")
 id.pack(side="right")
