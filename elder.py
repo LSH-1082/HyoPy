@@ -57,13 +57,13 @@ def loginCmd():
         cnt = 0
         for i in nameList:
             try:
-                os.makedirs(current_path + "/수급자/" + yearComboBox.get() + "/" + i + "/" + monthComboBox.get())
+                os.makedirs(current_path + "/수급자/" + i + "/"  + yearComboBox.get() + "/" + monthComboBox.get())
             except FileExistsError:
                 cnt +=1
         for i in nameList:
             try:
-                os.makedirs(current_path + "/수급자/" + yearComboBox.get() + "/" + i + "/연간서류")
-                os.makedirs(current_path + "/수급자/" + yearComboBox.get() + "/" + i + "/분기서류")
+                os.makedirs(current_path + "/수급자/" + i + "/" + yearComboBox.get() + "/연간서류")
+                os.makedirs(current_path + "/수급자/" + i + "/" + yearComboBox.get() + "/분기서류")
             except FileExistsError:
                 pass
 

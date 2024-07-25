@@ -109,12 +109,14 @@ def extractPages(document, name, startPage, endPage):
     month = yearMonth.split(".")[1].replace("0", "")
 
 
-    outputPath = directoryPath.get() + "/수급자/" + year + "년/" + name + "/" + month + "월/"
+    outputPath = directoryPath.get() + "/수급자/" + name + "/" + year + "년/" + month + "월/"
     if os.path.exists(outputPath):
         outputPath += name + " 장기요양급여 제공기록지.pdf"
         outputDocument.save(outputPath)
     else:
-        errorPeople = name
+        os.makedirs(outputPath)
+        outputPath += name + " 장기요양급여 제공기록지.pdf"
+        outputDocument.save(outputPath)
     
     return errorPeople
 
