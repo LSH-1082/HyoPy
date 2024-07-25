@@ -1,4 +1,5 @@
 import fitz  # PyMuPDF
+import tkinter as tk
 from tkinter import filedialog
 from tkinter import *
 import tkinter.messagebox as msgbox
@@ -26,11 +27,13 @@ def execute():
 
 def selectPdfFile():
     filePath = filedialog.askopenfilename()
+    pdfPath.delete(0, tk.END)
     pdfPath.insert(0, filePath)
     
 
 def selectDirectory():
     directory_path = filedialog.askdirectory()
+    directoryPath.delete(0, tk.END)
     directoryPath.insert(0, directory_path) 
 
 
