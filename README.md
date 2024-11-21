@@ -47,10 +47,15 @@
 - ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
 - tkinter
 - PyMuPDF-fitz
-- -pyinstaller
+- pyinstaller
 - os
 
 ## 🧱 실행파일 생성 방법 ##
+1. pyinstaller 설치
+```
+   pip install pyinstaller
+```
+2. 옵션과 모듈에 따른 실행파일 생성
 ```
    pyinstaller -w -F fileFolderSelector.py pyinstaller -w -F elder.py
    -w -> 실행파일을 실행했을 때 콘솔창이 안뜨게 해주는 옵션
