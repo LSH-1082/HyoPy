@@ -15,7 +15,8 @@
 1. [📋 프로젝트 소개](#-프로젝트-소개)
 2. [✨ 주요 기능](#-주요-기능)
 3. [🛠️ 기술 스택](#%EF%B8%8F-기술-스택)
-4. [🤝 기여 방법](#-기여-방법)
+4. [🧱 실행파일 생성 방법](#-실행파일-생성-방법)
+5. [🤝 기여 방법](#-기여-방법)
 
 
 ## 📋 프로젝트 소개
@@ -46,7 +47,17 @@
 - ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
 - tkinter
 - PyMuPDF-fitz
+- -pyinstaller
 - os
+
+## 🧱 실행파일 생성 방법 ##
+```
+   pyinstaller -w -F fileFolderSelector.py pyinstaller -w -F elder.py
+   -w -> 실행파일을 실행했을 때 콘솔창이 안뜨게 해주는 옵션
+   -F -> 실행파일을 만들었을 때 다른 잡다한 파일없이 실행파일만 생성해주는 옵션
+   pyinstaller -w -F elder.py --hidden-import selenium
+   모듈 포함 패키징 '--hidden-import 모듈명'
+```
 
 ## 🤝 기여 방법
 
